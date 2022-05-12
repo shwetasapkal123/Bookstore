@@ -17,6 +17,7 @@ namespace BookStore.Controllers
         {
             this.userBL = userBL;
         }
+
         [HttpPost("Register")]
         public IActionResult AddUser(UserModel userRegistration)
         {
@@ -41,5 +42,24 @@ namespace BookStore.Controllers
                 return this.BadRequest(new { Success = false, message = ex.Message });
             }
         }
+
+        [HttpPost("login")]
+        public IActionResult Login(string Email, string Password)
+        {
+            try
+            {
+                var result = this.userBL.Login(Email, Password);
+                if (result != null)
+                    return this.Ok(new { success = true, message = "Login Successful", data = result });
+                else
+                    return this.BadRequest(new { success = false, message = "Login UnSuccessful", data = result });
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

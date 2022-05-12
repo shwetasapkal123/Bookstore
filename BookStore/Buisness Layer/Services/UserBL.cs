@@ -14,11 +14,24 @@ namespace Buisness_Layer.Services
         {
             this.userRL = userRL;
         }
+        //method for user registration
         public UserModel Register(UserModel user)
         {
             try
             {
                 return this.userRL.Register(user);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        //Metho for user login
+        public UserLogin Login(string Email, string Password)
+        {
+            try
+            {
+                return this.userRL.Login(Email, Password);
             }
             catch (Exception)
             {

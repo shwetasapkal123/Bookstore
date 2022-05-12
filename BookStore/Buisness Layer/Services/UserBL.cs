@@ -26,7 +26,7 @@ namespace Buisness_Layer.Services
                 throw;
             }
         }
-        //Metho for user login
+        //Method for user login
         public UserLogin Login(string Email, string Password)
         {
             try
@@ -36,6 +36,18 @@ namespace Buisness_Layer.Services
             catch (Exception)
             {
                 throw;
+            }
+        }
+
+        public string ForgotPassword(string email)
+        {
+            try
+            {
+                return this.userRL.ForgotPassword(email);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
     }

@@ -129,5 +129,48 @@ namespace Repository_Layer.Services
                 signingCredentials: credentials);
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+        public string ForgotPassword(string email)
+        {
+            try
+            {
+                this.sqlConnection = new SqlConnection(this.Configuration["ConnectionStrings:BookStore"]);
+                SqlCommand com = new SqlCommand("UserForgotPassword", this.sqlConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                com.Parameters.AddWithValue("@Email", email);
+                this.sqlConnection.Open();
+                SqlDataReader rd = com.ExecuteReader();
+                if (rd.HasRows)
+                {
+                    int userId = 0;
+                    while (rd.Read())
+                    {
+                        email = Convert.ToString(rd["Email"] == DBNull.Value ? default : rd["Email"]);
+                        userId = Convert.ToInt32(rd["UserId"] == DBNull.Value ? default : rd["UserId"]);
+                    }
+
+                    this.sqlConnection.Close();
+                    var token = this.GenerateJWTToken(email, userId);
+                    new MsmqModel().Sender(token);
+                    return token;
+                }
+                else
+                {
+                    this.sqlConnection.Close();
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                this.sqlConnection.Close();
+            }
+        }
+      
     }
 }

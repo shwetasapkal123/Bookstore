@@ -5,4 +5,8 @@
     <RootNamespace>Database_Layer</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Experimental.System.Messaging" Version="1.1.0" />
+  </ItemGroup>
+
 </Project>

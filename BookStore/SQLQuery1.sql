@@ -61,8 +61,5 @@ create procedure UserForgotPassword
 )
 as
 begin
-Update Users
-set Password = 'Null'
-where Email = @Email;
 select * from Users where Email = @Email;
 End;

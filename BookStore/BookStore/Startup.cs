@@ -33,12 +33,7 @@ namespace BookStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            //for excpt aded 
             services.AddMvc();
-                 //.AddSessionStateTempDataProvider();
-
-            services.AddControllers();
 
             services.AddTransient<IUserRL, UserRL>();
             services.AddTransient<IUserBL, UserBL>();
@@ -94,37 +89,25 @@ namespace BookStore
                 options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
                 options.AddPolicy("RequireUserRole", policy => policy.RequireRole("User"));
             });
-    }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseAuthorization();
+            //app.UseMvc();
             app.UseAuthentication();
-
-            app.UseSession();
-           // app.UseMvc();
-
+            app.UseAuthorization();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore");
             });
             app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-
-        app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });

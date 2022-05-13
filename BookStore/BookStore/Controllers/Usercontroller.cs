@@ -1,8 +1,10 @@
 ﻿using Buisness_Layer.Interface;
 using Database_Layer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 
 namespace BookStore.Controllers
 {
@@ -82,5 +84,26 @@ namespace BookStore.Controllers
             }
         }
 
+        [Authorize]
+        [HttpPut("ResetPassword")]
+        public IActionResult ResetPassword(string newPassword, string confirmPassword)
+        {
+            try
+            {
+                var email = User.FindFirst("Email").Value.ToString();
+                if (this.userBL.ResetPassword(email, newPassword, confirmPassword))
+                {
+                    return this.Ok(new { Success = true, message = " Password Changed Successfully " });
+                }
+                else
+                {
+                    return this.BadRequest(new { Success = false, message = " Password Change Unsuccessfully " });
+                }
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(new { Success = false, message = ex.Message });
+            }
+        }
     }
 }

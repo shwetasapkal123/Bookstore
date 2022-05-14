@@ -35,8 +35,16 @@ namespace BookStore
             services.AddControllers();
             services.AddMvc();
 
+            services.AddMemoryCache();
+
             services.AddTransient<IUserRL, UserRL>();
             services.AddTransient<IUserBL, UserBL>();
+
+            services.AddTransient<IBookBL, BookBL>();
+            services.AddTransient<IBookRL, BookRL>();
+
+            services.AddTransient<IAminRL,AdminRL>();
+            services.AddTransient<IAdminBL, AdminBL>();
 
             // Adding Swagger 
             services.AddSwaggerGen(c =>

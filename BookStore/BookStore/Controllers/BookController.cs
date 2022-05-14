@@ -22,7 +22,7 @@ namespace BookStore.Controllers
             this.memoryCache = memoryCache;
             this.distributedCache = distributedCache;
         }
-        [Authorize(Roles = Role.Admin)]
+        [Authorize]
         [HttpPost("AddBook")]
         public IActionResult AddBook(BookModel book)
         {
@@ -36,6 +36,90 @@ namespace BookStore.Controllers
                 else
                 {
                     return this.BadRequest(new { Success = false, message = "Book Added Unsuccessfully" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(new { Success = false, message = ex.Message });
+            }
+        }
+
+        [Authorize]
+        [HttpPost("UpdateBook")]
+        public IActionResult UpdateBook(UpdateBook update)
+        {
+            try
+            {
+                var user = this.bookBL.UpdateBook(update);
+                if (user != null)
+                {
+                    return this.Ok(new { Success = true, message = "Book Details Updated Successfully", });
+                }
+                else
+                {
+                    return this.BadRequest(new { Success = false, message = "Book details Updated Unsuccessfully" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(new { Success = false, message = ex.Message });
+            }
+        }
+        [Authorize]
+        [HttpDelete("DeleteBook")]
+        public IActionResult DeleteBook(int bookId)
+        {
+            try
+            {
+                if (this.bookBL.DeleteBook(bookId))
+                {
+                    return this.Ok(new { Success = true, message = "Book Deleted Sucessfully" });
+                }
+                else
+                {
+                    return this.BadRequest(new { Success = false, message = "Enter Valid Book Id" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(new { Success = false, message = ex.Message });
+            }
+        }
+        [Authorize]
+        [HttpGet("{BookId}/Get")]
+        public IActionResult GetBookByBookId(int BookId)
+        {
+            try
+            {
+                var book = this.bookBL.GetBookByBookId(BookId);
+                if (book != null)
+                {
+                    return this.Ok(new { Success = true, message = "Book Detail Fetched Sucessfully", Response = book });
+                }
+                else
+                {
+                    return this.BadRequest(new { Success = false, message = "Enter Valid Book Id" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return this.BadRequest(new { Success = false, message = ex.Message });
+            }
+        }
+        [Authorize]
+        [HttpGet("GetAllBook")]
+        public IActionResult GetBook()
+        {
+            try
+            {
+                var updatedBookDetail = this.bookBL.GetAllBooks();
+                if (updatedBookDetail != null)
+                {
+                    return this.Ok(new { Success = true, message = "Book Detail Fetched Sucessfully", Response = updatedBookDetail });
+                }
+                else
+                {
+                    return this.BadRequest(new { Success = false, message = "Enter Valid Book Id" });
                 }
             }
             catch (Exception ex)

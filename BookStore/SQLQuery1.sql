@@ -334,3 +334,66 @@ from AddressTable a1
 Inner join AddressTypeT a2 on a2.TypeId = a1.TypeId 
 where UserId = @UserId;
 END;
+
+----------------create wishlist table---------------------------
+create Table Wishlist
+(
+WishlistId int identity(1,1) primary key,
+UserId INT FOREIGN KEY REFERENCES Users(UserId),
+bookId INT FOREIGN KEY REFERENCES Books(bookId)
+);
+
+select * from Wishlist
+
+----------------------create procedure to Add in Wishlist------------------
+create procedure AddInWishlist
+(
+	@UserId int,
+	@BookId int
+)
+as
+BEGIN
+If Exists (Select * from Wishlist where UserId = @UserId and bookId = @BookId)
+begin 
+select 2;
+end
+Else
+begin 
+if Exists (select * from Books where bookId = @BookId)
+begin
+Insert into Wishlist(UserId, bookId) values (@UserId , @BookId);
+end
+else
+begin
+select 1;
+end
+end
+End;
+
+---------------------create procedure to delete from wishlist----------------------
+create procedure DeleteFromWishlist
+(
+@WishlistId int,
+@UserId int
+)
+as
+BEGIN 
+Delete Wishlist where WishlistId = @WishlistId and UserId = @UserId;
+End;	 
+
+-----------------create procedure to get all records from wishlist---------------------
+create procedure GetAllRecordFromWishlist
+(
+@UserId int
+)
+as
+BEGIN
+select w.WishlistId,w.UserId,w.bookId,
+b.bookName,b.authorName,b.discountPrice,b.originalPrice,
+b.bookImage
+from Wishlist w
+right join Books b
+on w.bookId = b.bookId
+where UserId = @UserId;
+END;
+

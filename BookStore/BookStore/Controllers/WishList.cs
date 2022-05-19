@@ -1,4 +1,5 @@
 ﻿using Buisness_Layer.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
@@ -19,7 +20,7 @@ namespace BookStore.Controllers
             this.memoryCache = memoryCache;
             this.distributedCache = distributedCache;
         }
-
+        [Authorize(Roles = Role.User)]
         [HttpPost("AddWishlist")]
         public IActionResult AddInWishlist(int bookId)
         {
@@ -45,6 +46,7 @@ namespace BookStore.Controllers
                 return this.BadRequest(new { Success = false, message = ex.Message });
             }
         }
+        [Authorize(Roles = Role.User)]
         [HttpDelete("DeleteFromWishlist")]
         public IActionResult DeleteFromWishlist(int wishlistId)
         {

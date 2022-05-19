@@ -22,7 +22,7 @@ namespace BookStore.Controllers
             this.memoryCache = memoryCache;
             this.distributedCache = distributedCache;
         }
-        [Authorize]
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("AddBook")]
         public IActionResult AddBook(BookModel book)
         {
@@ -44,7 +44,7 @@ namespace BookStore.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Roles = Role.Admin)]
         [HttpPost("UpdateBook")]
         public IActionResult UpdateBook(UpdateBook update)
         {
@@ -65,7 +65,7 @@ namespace BookStore.Controllers
                 return this.BadRequest(new { Success = false, message = ex.Message });
             }
         }
-        [Authorize]
+        [Authorize(Roles = Role.Admin)]
         [HttpDelete("DeleteBook")]
         public IActionResult DeleteBook(int bookId)
         {
@@ -85,7 +85,7 @@ namespace BookStore.Controllers
                 return this.BadRequest(new { Success = false, message = ex.Message });
             }
         }
-        [Authorize]
+        [Authorize(Roles = Role.User)]
         [HttpGet("{BookId}/Get")]
         public IActionResult GetBookByBookId(int BookId)
         {
@@ -106,7 +106,7 @@ namespace BookStore.Controllers
                 return this.BadRequest(new { Success = false, message = ex.Message });
             }
         }
-        [Authorize]
+        [Authorize(Roles = Role.User)]
         [HttpGet("GetAllBook")]
         public IActionResult GetBook()
         {

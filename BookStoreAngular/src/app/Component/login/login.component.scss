@@ -1,0 +1,210 @@
+.imageEdit
+{
+    width: 245px;
+    height: 245px;
+    border-radius: 130px;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.WholeImage
+{
+    background-color: #F5F5F5;
+    width: 624px;
+    height: 391px;
+    border-radius: 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 250px;
+}
+.loginLayout
+{
+    background-color: #9D9D9D;
+    width: 100%;
+    height: 100%;   
+}
+.type {
+    margin-left: -30px;
+    margin-bottom: 15px;
+}
+.component{
+    height: 100%;
+    width: 100%;
+    background-color: #807F7F;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.form-head{
+    width: 370px;
+    height: 405px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 316px;
+    box-shadow: 0px 5px 15px #00000029;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    opacity: 1;
+}
+.form-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    margin-left: 74px;
+    border-radius: 3px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+}
+#Indicator{
+    margin-left: -60px;
+    width: 10%;
+    border: none;
+    background: #B3290B;
+    height: 3px;
+    margin-top: -2px;
+    transform: translateX(100px);
+}
+// .mat-radio-button ~ .mat-radio-button {
+//     margin-left: 16px;
+//   }
+.input-group{
+    top: 190px;
+    position: absolute;
+    width: 480px;
+    transition: -5s;
+    margin-top: -72px;
+    margin-left: 38px;
+}
+.type {
+    margin-left: -30px;
+    margin-bottom: 15px;
+}
+// .mat-radio-checked .mat-radio-inner-circle {
+//     transform: scale(0.5);
+//     opacity: 1;
+//     transition: transform ease 280ms,background-color ease 280ms;
+// }
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #A03037 !important;
+}
+
+::ng-deep.mat-radio-inner-circle {
+    border-radius: 50% !important;
+    height: 20px !important;
+    width: 20px !important;
+    border-color: #B3290B !important;
+}
+::ng-deep.mat-radio-outer-circle {
+    border-radius: 50% !important;
+    height: 20px !important;
+    width: 20px !important;
+    border-color: #B3290B !important;
+}
+::ng-deep.mat-radio-button{
+    margin-right: 20px;
+}
+.form label{
+    display: flex;
+}
+.input-field{
+   width: 60%;
+   padding: 10px 0;
+   margin: 8px 0;
+}
+.submit-btn{
+    width: 61%;
+    padding: 10px 0;
+    margin: 8px 0;
+    cursor: pointer;
+    border: none;
+    background-color: #A03037;
+    color: white;
+    font-size: 15px;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: #BFBDBD;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.header{
+    width: 300px;
+    height: 380px;
+    margin-top: -477px;
+    margin-left: 272px;
+    background: #F5F5F5;
+    padding: 5px;
+    border-radius: 21px;
+    opacity: 1;
+    background-color: rgba(245, 245, 245, 0.893);
+}
+.img-box{
+    width: 220px;
+    height: 300px;
+    margin: 35px auto;
+    position: relative;
+    margin-left: 74px;
+    border-radius: 3px;
+}
+.online{
+    width: 230px;
+    height: 230px;
+    border-radius: 70%; 
+    margin-top: 30px;
+    margin-left: -40px;    
+}
+.text-online{
+    display: flex;
+    margin-top: 32px;
+    margin-left: -36px;
+    text-align: center;
+}
+.choose-btn{
+    display: flex;
+    margin-top: 38px;
+}
+.facebook-btn{
+top: 507px;
+left: 727px;
+width: 140px;
+height: 37px;
+background: #4266B2;
+border: 1px solid white;
+border-radius: 3px;
+opacity: 1;
+color: white;
+}
+.google-btn{
+top: 507px;
+left: 860px;
+width: 140px;
+height: 37px;
+background: #F5F5F5;
+border: 1px solid #E4E4E4;
+border-radius: 3px;
+opacity: 1;
+margin-left: 14px;
+}
+.text{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 135px;
+    font: normal normal bold 14px/18px Meiryo UI;
+    color: #343434;
+    opacity: 1;
+}

@@ -1,0 +1,121 @@
+<!-- <div>
+    <div class="container" fxLayout="column">
+        <div class="header" fxLayout="row">
+            <p>Home/ My cart</p>
+        </div>
+        <div class="items" fxLayout="column">
+            <div class="items_header">
+                <div>My cart({{cartItemsCount}})</div>
+                <div class="location">
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Use current loaction</b></mat-label>
+                    </mat-form-field>
+                </div>
+            </div>
+            <span *ngIf="cartList?.length<1" fxLayoutAlign="center center">Cart is Empty</span>
+            <div class="book" *ngFor="let cart of cartList">
+                <div><img class="bookImage" [src]="cart.bookmodel.bookImage" alt=""></div>
+                <div class="bookinfo">
+                    <div class="bookName">{{cart.bookmodel.bookName}}</div>
+                    <div class="author">by {{cart.bookmodel.authorName}}</div>
+                    <div class="cost">
+                        <p><b>Rs.{{cart.bookmodel.discountPrice}}</b></p>
+                        <p><s>Rs.{{cart.bookmodel.originalPrice}}</s></p>
+                    </div>
+                    <div class="cart">
+                        <button id="minus" (click)="minusCartQty(cart.cartId,cart.quantity)">-</button>
+                        <p>{{cart.quantity}}</p>
+                        <button id="plus" (click)="plusCartQty(cart.cartId,cart.quantity)">+</button>
+                        <span style="margin: 10px 15px;color: rgb(82, 80, 80);cursor: pointer;" (click)="removeFromCart(cart.cartId)">Remove</span>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <button class="order" (click)="showDetails()" *ngIf="show && cartItemsCount>=1">Place Order</button>
+            </div>
+
+        </div>
+
+        <div class="address" fxLayout="column" ngClass.xs="address-xs">
+            <p style="font-size: 15px;" *ngIf="address">Address Details</p>
+            <div *ngIf="showCustomerDetails" class="customeraddress">
+                <form [formGroup]="customerForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="customerHeader">
+                        <p style="font-size: 20px;">Customer Details</p>
+                        <button>Add New Address</button>
+                    </div>
+                    <div class="details" ngClass.xs="details-xs" ngClass.sm="details-xs">
+                        <div class="fullName">
+                            <mat-label>Full Name</mat-label>
+                            <mat-form-field appearance="outline">
+                                <input matInput [(ngModel)]="fullName" disabled>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="fullName">
+                            <mat-label>Mobile Number</mat-label>
+                            <mat-form-field appearance="outline">
+                                <input matInput [(ngModel)]="mobileNumber" disabled>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="workAddress" ngClass.xs="workAddress-xs" ngClass.sm="workAddress-xs">
+                        <p>Address</p>
+                        <textarea type="text" class="addressInput" ngClass.xs="addressInput-xs"
+                            ngClass.sm="addressInput-xs" formControlName="address"></textarea>
+                        <div class="city" ngClass.xs="city-xs" ngClass.sm="city-xs">
+                            <div class="fullName">
+                                <mat-label>city/town</mat-label>
+                                <mat-form-field appearance="outline">
+                                    <input matInput placeholder="City/State" formControlName="city">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="fullName">
+                                <mat-label>state</mat-label>
+                                <mat-form-field appearance="outline">
+                                    <input matInput type="text" placeholder="State" formControlName="state">
+                                    <mat-error>Enter State Name</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="homeAddress" ngClass.xs="homeAddress-xs" ngClass.sm="homeAddress-xs">
+                        <p class="optionAddress" style="font-size: 17px;">Type</p>
+                        <mat-radio-group aria-label="Select an option">
+                            <mat-radio-button  value="Home">Home</mat-radio-button>
+                            <mat-radio-button value="Work">work</mat-radio-button>
+                            <mat-radio-button value="other">other</mat-radio-button>
+                          </mat-radio-group>
+                        <p><b>Address</b></p>
+                        <p><b>BridgeLabz Solutions LLP, No.42, 14th Main, 15th Cross, Sector 4, Opp to BDA<br>
+                                complex, near Kumarakom restaurant, HSR Layout, Bangalore</b></p>
+                    </div>
+                    <button type="submit" class="continue" (click)="showOrderDetails()">CONTINUE</button>
+                </form>
+            </div>
+        </div>
+        <div class="summary" fxLayout="column" ngClass.xs="summary-xs">
+            <p *ngIf="summery">Order Summery</p>
+            <div *ngIf="showSummeryDetails" class="showSummrey">
+                <p style="font-size: 20px; margin-bottom: 20px;">Order Summery</p>
+                <div class="book" *ngFor="let book of cartList">
+                    <div class="bookImg"><img [src]="book.bookmodel.bookImage" alt=""></div>
+                    <div class="bookinfo">
+                        <div style="font-size: 20px; color: rgb(77, 77, 74); margin-bottom: 5px;">
+                            {{book.bookName}}</div>
+                        <div style="font-size: 14px; color: rgb(187, 187, 183); margin-bottom: 5px;">by
+                            {{book.author}}</div>
+                        <div class="cost">
+                            <p><b>Rs.{{book.discountPrice}}</b></p>
+                            <p><s>Rs.{{book.price}}</s></p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="order1" ngClass.xs="order1-xs" ngClass.sm="order1-xs">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

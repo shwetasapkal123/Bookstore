@@ -1,0 +1,127 @@
+.books_count{
+    display: flex;
+}
+.buttonImage
+{
+    background-color: transparent;
+    border: none;
+}
+.header{
+    display: flex;
+    margin-top: 20px;
+}
+.sort{
+    margin-left: auto;
+}
+.books_list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 4;
+    margin-left: 30px;
+    //padding-left: 20px;
+    margin-right: -86px;
+}
+
+.book{
+    border: 1px solid silver;
+    width: 240px;
+    height: 290px;
+    margin-right: 9.8px;
+    margin-bottom: 20px;
+}
+
+.book_image{
+    width: 240px;
+    height: 177px;
+    background-color: #f5f5f5;
+}
+.ImageofBook{
+    width: 150px;
+    height: 140px;
+    margin-top: 20px;
+    margin-left: 40px;
+    opacity: 1;
+    cursor: pointer;
+    border:  2px solid blue;
+}
+.book_data{
+    margin-top: 15px;
+    margin-left: -30px;
+    padding-left: 10px;
+    margin: 15px 15px;
+    border: 2px solid red;
+}
+.name{
+    width: 130px;
+    height: 19px;
+    font: normal normal normal 14px/19px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+.author{
+    font: normal normal normal 10px/13px Roboto;
+    color: #878787;
+}
+.book_image img{
+    margin: 30px 70px;
+}
+
+.rating{
+    width: 43px;
+    height: 18px;
+    background-color: green;
+    color: #fff;
+    margin-top: 2px;
+    display: flex;
+}
+
+.star{
+    margin-top: -1px;
+    margin-left: 3px;
+    height: 18px;
+    color: white;
+}
+
+.cost{
+    display: flex;
+    flex-direction: row;
+}
+.dis-price{
+    font: normal normal bold 12px/16px Roboto; 
+    color: #0A0102;
+}
+.price{
+     font-size: 10px; 
+    font: normal normal normal 10px/13px Roboto;
+    margin-top: 15px;
+    padding-left: 10px;
+    color: #878787;
+}
+.pagination{
+    margin-left: 200px;
+    margin-bottom: 1rem;
+}
+.container{
+    margin: 0px 100px;
+    background-color: #fff;
+}
+
+.container-sm{
+    margin: 0px 100px;
+}
+
+.container-md{
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 90%;
+}
+
+.header{
+    display: flex;
+    margin-top: 20px;
+}
+
+.books_count{
+    display: flex;
+}

@@ -1,0 +1,52 @@
+    <!-- <div class="loginLayout">
+      <div class="WholeImage">
+        <img class="imageEdit" src="../../../assets/2766594@2x.png">
+        <div style="margin-left: 70px;font-size: larger;font-family: Arial, Helvetica, sans-serif;">
+            <p>Online Book Shopping</p>
+        </div> 
+      </div>
+      <div class="type" fxLayout="row">
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="admin" (click)="admin()">Admin</mat-radio-button>
+          <mat-radio-button value="user" (click)="userReg()">User</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div> -->
+
+    <div class="component">
+      <div class="form-head">
+        <div class="form-box">
+          <div class="type" fxLayout="row">
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="admin" (click)="admin()">Admin</mat-radio-button>
+              <mat-radio-button value="user" (click)="userReg()">User</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <button type="button" class="toggle-btn">LOGIN</button>
+          <button type="button" class="toggle-btn" routerLink="/register">SIGNUP</button>
+          <hr id="Indicator">
+        </div>
+        <form id="login" class="input-group" [formGroup]="loginForm" (ngSubmit)="onSubmitloginForm()">
+           <input type="text" class="input-field" placeholder="Email" formControlName="Email" required>
+           <input type="password" class="input-field" placeholder="Password" formControlName="password" required>
+           <button type="submit" class="submit-btn">Log In</button>
+           <span class="text">OR</span>
+        <div class="choose-btn" fxLayout="column" fxLayoutAlign="space-between center">
+          <div>
+            <button type="submit" class="facebook-btn">Facebook</button>
+          </div>
+          <div>
+            <button type="submit" class="google-btn">Google</button>
+          </div>
+        </div>
+        </form>
+      </div>
+      <div class="containter" fxHide.xs="true" fxHide.sm="true">
+        <div class="header">
+          <div class="img-box">
+            <img class="online" src="../../../assets/2766594@2x.png">       
+            <span class="text-online">ONLINE BOOK SHOPPING</span>
+          </div>
+         </div>
+        </div>
+  </div>

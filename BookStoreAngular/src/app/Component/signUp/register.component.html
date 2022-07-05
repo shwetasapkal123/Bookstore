@@ -1,0 +1,33 @@
+<!-- <p>register works!</p> -->
+<div class="component">
+    <div class="form-head">
+      <div class="form-box">
+        <div class="type" fxLayout="row">
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="admin" (click)="admin()">Admin</mat-radio-button>
+            <mat-radio-button value="user" (click)="userReg()">User</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <button type="button" class="toggle-btn" routerLink="/login">LOGIN</button>
+        <button type="button" class="toggle-btn" >SIGNUP</button>
+        <hr id="Indicator">
+      </div>
+      <form id="signup" class="input-group" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+          <input type="text" class="input-field" id="name" placeholder="Name" formControlName="fullName" required>
+          <input type="text" class="input-field" placeholder="Email" formControlName="email" required>
+          <input type="text" class="input-field" placeholder="Password" formControlName="password" required>
+          <input type="text" class="input-field" placeholder="Mobile No" formControlName="phone" required>
+          <button type="submit" class="submit-btn">Sign Up</button>
+      </form>
+    </div>
+      
+      <div class="containter" fxHide.xs="true" fxHide.sm="true">
+        <div class="header">
+          <div class="img-box" fxHide.xs="true" fxHide.sm="true">
+            <img class="online" src="../../../assets/2766594@2x.png">       
+            <span class="text-online">ONLINE BOOK SHOPPING</span>
+          </div>
+         </div>
+        </div>
+</div>

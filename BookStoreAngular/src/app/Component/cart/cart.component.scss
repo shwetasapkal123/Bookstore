@@ -1,0 +1,227 @@
+.container{
+    margin: 0 0 0 150px;
+    height: auto;
+    padding-bottom: 100px;
+}
+
+.header{
+    margin: 15px 0;
+}
+
+.items{
+    border: 1px solid rgb(219, 202, 202);
+    width: 70%;
+    height: auto;
+    padding: 10px 30px 40px 30px;
+    // margin-bottom: 50px;
+}
+.items_header{
+    display: flex;
+    margin: 10px 0;
+}
+
+.location{
+    margin-left: auto;
+}
+
+.book{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.bookinfo{
+    margin-left: 30px;
+    font-size: 15px;
+}
+.bookImage{
+    height: 84px;
+    width: 65px;
+}
+.bookName{
+    font-size: 18pxpx; color: rgb(77, 77, 74); 
+    margin-bottom: 5px;
+}
+.author{
+    font-size: 13px; color: rgb(187, 187, 183); 
+    margin-bottom: 5px;
+}
+.cost{
+    display: flex;
+}
+.cost b{
+    font-size: 17px;
+}
+
+.cost s{
+    font-size: 12px;
+    margin-left: 10px;
+    color: rgb(187, 187, 183);
+}
+.cart{
+    font-size: 15px;
+    display: flex;
+}
+.cart button{
+    height: 35px;
+    width: 35px;
+    border-radius: 70%;
+    background-color: #fff;
+    border: 1px solid silver;
+    font-size: 20px;
+    cursor: pointer;
+}
+.cart  p{
+   cursor: pointer; 
+   text-align: center;
+   height: 30px;
+   width: 40px;
+   font-size: 25px;
+   margin: 0 5px;
+   background: #FFFFFF 0% 0% no-repeat padding-box;
+   border: 1px solid #DBDBDB;
+   border-radius: 2px;
+}
+.button{
+    // margin-top: 105px;
+    // margin-right: auto;
+    float: right;
+    margin-bottom: 10px;
+}
+.order{
+    margin-left: 700px;
+    background-color: #3371B5;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.address{
+    color: rgb(82, 80, 80);
+    border: 1px solid rgb(219, 202, 202);
+    width: 70%;
+    height: auto;
+    padding: 20px 30px;
+    margin: 20px 0px;
+}
+
+.customeraddress{
+    margin-bottom: 40px;
+}
+
+.customerHeader{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.customerHeader button{
+    margin-left: auto;
+    color: #A03037;
+    background-color: #fff;
+    border: 2px solid #A03037;
+    border-radius: 2px;
+    padding: 0 10px;
+}
+
+.details{
+    display: flex;
+    gap: 10px;
+    margin-left: 35px;
+}
+
+.fullName{
+    display: flex;
+    flex-direction: column;
+}
+
+.workAddress{
+    margin-left: 35px;
+}
+
+.optionAddress b{
+    padding-right: 10px;
+}
+
+.addressInput{
+    width: 410px;
+    height: 60px;
+    color: #857f7f;
+    background-color: #f5f3f3;
+    border: 1px solid rgb(219, 202, 202);
+}
+
+.city{
+    display: flex;
+    gap: 10px;
+}
+
+.homeAddress{
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+.homeAddress p{
+    color: black;
+    font-size: 12px;
+}
+
+.continue{
+    float: right;
+    background-color: #3371B5;
+    color: #f5f3f3;
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+    height: 30px;
+    width: 150px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.summary{
+    color: rgb(82, 80, 80);
+    border: 1px solid rgb(219, 202, 202);
+    width: 70%;
+    height: auto;
+    padding: 20px 30px;
+    margin-bottom: 50px;
+}
+.showSummrey{
+    margin-bottom: 40px;
+}
+
+.order1{
+    float: right;
+    background-color: #3371B5;
+    color: #f5f3f3;
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+    height: 30px;
+    width: 150px;
+    cursor: pointer;
+
+}
+::ng-deep.mat-radio-inner-circle {
+    border-radius: 50% !important;
+    height: 20px !important;
+    width: 20px !important;
+    border-color: #B3290B !important;
+}
+::ng-deep.mat-radio-outer-circle {
+    border-radius: 50% !important;
+    height: 20px !important;
+    width: 20px !important;
+    border-color: #B3290B !important;
+}
+::ng-deep.mat-radio-button{
+    margin-right: 20px;
+}
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #A03037 !important;
+}
